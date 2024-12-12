@@ -4,17 +4,16 @@ document.addEventListener('DOMContentLoaded', function() {
   const saveButton = document.getElementById('saveButton');
 
   // Load existing materials
-  chrome.storage.sync.get(['studyMaterials'], function(result) {
-    if (result.studyMaterials) {
-      textarea.value = result.studyMaterials.join('\n');
-    }
-  });
+  localStorage.getItem(['studyMaterials']);
 
   // Save materials
   saveButton.addEventListener('click', function() {
+    let factgroup = {}
     const materials = textarea.value.split('\n').filter(line => line.trim() !== '');
-    chrome.storage.sync.set({studyMaterials: materials}, function() {
-      alert('Study materials saved!');
-    });
+    for (let index = 0; index < materials.length; index++) {
+      factgroup[index] = materials[index]
+    }
+    localStorage.setItem("studyMaterials", JSON.stringify(factgroup)) 
+    alert('Study materials saved!');
   });
 });
