@@ -4,7 +4,17 @@ document.addEventListener('DOMContentLoaded', function() {
   const saveButton = document.getElementById('saveButton');
 
   // Load existing materials
-  localStorage.getItem(['studyMaterials']);
+  let currentValueObject = JSON.parse(localStorage["studyMaterials"]);
+  let valueSize = Object.keys(currentValueObject).length
+  if (valueSize == 0) {
+    currentValueObject = ""
+  };
+  let currentArea = ""
+  for (let index = 0; index < valueSize; index++) {
+    currentArea += `${currentValueObject[index]} \n`
+  }
+  
+  textarea.innerHTML = currentArea;
 
   // Save materials
   saveButton.addEventListener('click', function() {

@@ -5,7 +5,16 @@
   "description": "Periodic study reminders while browsing",
   "permissions": [
     "storage",
-    "tabs"
+    "tabs",
+    "alarms",
+    "webNavigation",
+    "activeTab",
+    "notifications",
+
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
   ],
   "action": {
     "default_popup": "popup.html",
