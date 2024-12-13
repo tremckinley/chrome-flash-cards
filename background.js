@@ -29,16 +29,6 @@ async function handleStorageUpdate(changes, areaName) {
 }
 
 
-const notificationPrompts = [
-  "Study Time!",
-  "Did you know?",
-  "Let\'s Review...",
-  "Next Lesson:",
-  "It\'s me your study buddy!",
-  "And another thing!..."
-]
-
-
 // Function to generate notification with study material
 function sendStudyNotes() {
   if (valueSize === 0) {
@@ -49,10 +39,10 @@ function sendStudyNotes() {
   chrome.notifications.create({
     type: "basic",
     iconUrl: "nudge.png",
-    title: notificationPrompts[Math.floor(Math.random*notificationPrompts.length)],
+    title: "Study Nudge!",
     message: studyMaterials[nextMessageKey],
     buttons: [{ title: "Got It!" }],
-    priority: 0,
+    priority: 0
   });
 
   // Loop through study notes
