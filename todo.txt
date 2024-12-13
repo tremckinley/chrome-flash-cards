@@ -1,0 +1,2 @@
+add icons properly
+add other buttons (remove a note, pause frequency)
