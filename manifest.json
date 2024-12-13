@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Study Aid Reminder",
+  "name": "Noti Study Aid",
   "version": "1.0",
   "description": "Periodic study reminders while browsing",
   "permissions": [
@@ -9,7 +9,7 @@
     "alarms",
     "webNavigation",
     "activeTab",
-    "notifications",
+    "notifications"
 
   ],
   "host_permissions": [
@@ -19,7 +19,7 @@
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-     
+      
     }
   },
   "background": {
