@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Noti Study Aid",
+  "name": "Nudge Study Buddy",
   "version": "1.0",
   "description": "Periodic study reminders while browsing",
   "permissions": [
@@ -19,10 +19,10 @@
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "./nudge.png",
-      "32": "./nudge.png",
-      "48": "./nudge.png",
-      "128": "./nudge.png"
+      "16": "./icons/nudge.png",
+      "32": "./icons/nudge.png",
+      "48": "./icons/nudge48.png",
+      "128": "./icons/nudge128.png"
     }
   },
   "background": {

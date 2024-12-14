@@ -11,7 +11,9 @@ let nextMessageKey = 0;
 getValue("studyMaterials").then((result) => {
   studyMaterials = JSON.parse(result || "[]"); // Default to empty array if no data
   valueSize = Object.keys(studyMaterials).length;
+  console.log(studyMaterials)
 });
+
 
 // Function to update study materials when changed
 async function handleStorageUpdate(changes, areaName) {
@@ -38,10 +40,13 @@ function sendStudyNotes() {
 
   chrome.notifications.create({
     type: "basic",
-    iconUrl: "nudge.png",
+    iconUrl: "./icons/nudge.png",
     title: "Study Nudge!",
     message: studyMaterials[nextMessageKey],
-    buttons: [{ title: "Got It!" }],
+    buttons: [
+      { title: "Got It!" },
+      { title: "Mastered!" }
+    ],
     priority: 0
   });
 
@@ -77,4 +82,3 @@ chrome.tabs.onCreated.addListener((tab) => {
 
 // Listener for storage changes
 chrome.storage.onChanged.addListener(handleStorageUpdate);
-
