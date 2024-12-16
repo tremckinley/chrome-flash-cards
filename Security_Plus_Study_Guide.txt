@@ -1,0 +1,50 @@
+Port 22 is used for SSH.
+HTTPS uses port 443 for secure web traffic.
+A firewall is a network security device that monitors incoming and outgoing network traffic and denies or permits passage based on defined security rules.
+A DMZ is a small isolated network located outside the secure perimeter of a private network.
+A VPN creates a secure, encrypted connection over a public network.
+WPA3 is the latest Wi-Fi security standard, offering improved security over WPA2.
+WEP is an older, less secure Wi-Fi encryption protocol.
+Tailgating is when an unauthorized person follows an authorized person into a secure area.
+Mantrap is a physical security measure used to control access to secure areas.
+RBAC stands for Role-Based Access Control.
+Least privilege is a security principle that dictates granting users the minimum level of access necessary to perform their job functions.
+Phishing is a type of social engineering attack where attackers send fraudulent emails to trick victims into revealing sensitive information.
+Incident response is a process for responding to and recovering from a security breach.
+Digital forensics is the process of identifying, preserving, analyzing, and presenting digital evidence.
+Risk assessment is the process of identifying, analyzing, and prioritizing potential risks.
+IaaS stands for Infrastructure as a Service.
+PaaS stands for Platform as a Service.
+SaaS stands for Software as a Service.
+MDM stands for Mobile Device Management.
+AES is a symmetric-key encryption algorithm.
+RSA is an asymmetric-key encryption algorithm.
+SHA-256 is a cryptographic hash function.
+Ransomware encrypts a victim's files and demands a ransom to decrypt them.
+Malware is any software designed to harm a computer system.
+Hardening is the process of securing a system by reducing its attack surface.
+DDoS stands for Distributed Denial of Service.
+SQL injection is a type of attack that targets databases.
+GDPR stands for General Data Protection Regulation.
+CCPA stands for California Consumer Privacy Act.
+Zero-trust security is a security model that assumes that no one and nothing can be trusted, regardless of network location.
+Biometric authentication uses biological characteristics, such as fingerprints or facial recognition, for authentication.
+Incident response plan is a documented plan that outlines the steps to be taken in response to a security incident.
+Vulnerability scanning is the process of identifying and assessing vulnerabilities in systems and networks.
+Penetration testing is the process of simulating attacks on a system to identify weaknesses.
+Security information and event management (SIEM) is a software solution that collects and analyzes security event logs.
+Security operations center (SOC) is a team of security professionals who monitor and respond to security threats.
+Endpoint detection and response (EDR) is a security solution that detects and responds to threats on endpoints, such as workstations and servers.
+Security orchestration, automation, and response (SOAR) is a software platform that automates security operations tasks.
+Threat intelligence is the collection, analysis, and dissemination of information about threats and vulnerabilities.
+Security awareness training is the process of educating users about security best practices.
+Encryption is the process of converting plaintext into ciphertext.
+Decryption is the process of converting ciphertext into plaintext.
+Hashing is a mathematical function that maps data of arbitrary size to a fixed-size output.
+Digital signature is a cryptographic technique used to authenticate the origin of a message.
+Public-key infrastructure (PKI) is a system for creating, managing, storing, distributing, and revoking digital certificates.
+Man-in-the-middle attack is a type of attack where an attacker intercepts communication between two parties.
+Brute-force attack is a type of attack where an attacker tries to guess passwords or encryption keys.
+Denial-of-service (DoS) attack is a type of attack that overwhelms a system or network with traffic, preventing legitimate users from accessing it.
+Cross-site scripting (XSS) is a type of web application vulnerability that allows attackers to inject malicious code into web pages.
+SQL injection is a type of attack that targets databases by injecting malicious SQL code into input fields.
