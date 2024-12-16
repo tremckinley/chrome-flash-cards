@@ -1,11 +1,13 @@
+let studyMaterials = [];
+let valueSize = 0;
+let nextMessageKey = 0;
+
+chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true }).catch((error) => console.error(error));
+
 async function getValue(key) {
   const result = await chrome.storage.local.get(key);
   return result[key];
 }
-
-let studyMaterials = [];
-let valueSize = 0;
-let nextMessageKey = 0;
 
 // Initialize study materials
 getValue("studyMaterials").then((result) => {
@@ -20,10 +22,11 @@ async function handleStorageUpdate(changes, areaName) {
   if (areaName === 'local' && changes.studyMaterials) {
     // Retrieve the updated value
     const updatedStudyMaterials = changes.studyMaterials.newValue;
+    console.log("new Study materials", updatedStudyMaterials)
 
     // Parse and update your local variables if needed
-    let studyMaterials = JSON.parse(updatedStudyMaterials);
-    let valueSize = Object.keys(studyMaterials).length;
+    studyMaterials = JSON.parse(updatedStudyMaterials);
+    valueSize = Object.keys(studyMaterials).length;
 
     console.log("Updated Study Materials:");
     console.log("Number of items:", valueSize);
@@ -58,8 +61,8 @@ function sendStudyNotes() {
   }
 }
 
-// Set an alarm to run every 5 minutes
-chrome.alarms.create("studyNudge", { periodInMinutes: 0.2 }); // 0.2 = 12 seconds for testing
+// Set an alarm to run every (x) minutes
+chrome.alarms.create("studyNudge", { periodInMinutes: 1.5 }); // 0.2 = 12 seconds for testing
 
 // Listener for the alarm
 chrome.alarms.onAlarm.addListener((alarm) => {

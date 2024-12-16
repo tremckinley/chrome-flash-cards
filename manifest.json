@@ -3,21 +3,29 @@
   "name": "Nudge Study Buddy",
   "version": "1.0",
   "description": "Periodic study reminders while browsing",
+  "icons": {
+    "16": "./icons/nudge.png",
+    "32": "./icons/nudge.png",
+    "48": "./icons/nudge48.png",
+    "128": "./icons/nudge128.png"
+  },
+
   "permissions": [
     "storage",
     "tabs",
     "alarms",
     "webNavigation",
     "activeTab",
-    "notifications"
+    "notifications",
+    "sidePanel",
+    "contextMenus"
+  ],
 
-  ],
-  "host_permissions": [
-    "http://*/*",
-    "https://*/*"
-  ],
+  "host_permissions": ["http://*/*", "https://*/*"],
+
   "action": {
-    "default_popup": "popup.html",
+    "default_title": "View/Edit Nudge's Study Guide",
+
     "default_icon": {
       "16": "./icons/nudge.png",
       "32": "./icons/nudge.png",
@@ -25,7 +33,12 @@
       "128": "./icons/nudge128.png"
     }
   },
+
   "background": {
     "service_worker": "background.js"
+  },
+
+  "side_panel": {
+    "default_path": "./sidePanel.html"
   }
 }
