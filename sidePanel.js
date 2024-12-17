@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const textarea = document.getElementById("studyMaterials");
   const saveButton = document.getElementById("saveButton");
-  const pauseButton = document.getElementById("pauseNotis");
 
   // Function to retrieve value from chrome.storage.local
   async function getValue(key) {
@@ -37,7 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Save new study materials
   saveButton.addEventListener("click", function () {
-    const materials = textarea.value.split("\n").filter(line => line.trim() !== "");
+    const materials = textarea.value
+      .split("\n")
+      .filter((line) => line.trim() !== "");
     const factgroup = materials.reduce((acc, material, index) => {
       acc[index] = material;
       return acc;
@@ -46,5 +47,4 @@ document.addEventListener("DOMContentLoaded", function () {
     storeData("studyMaterials", JSON.stringify(factgroup));
     alert("Study materials saved!");
   });
-
 });

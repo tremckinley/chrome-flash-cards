@@ -1,9 +1,14 @@
+// Declare global variable used throughout
 let studyMaterials = [];
 let valueSize = 0;
 let nextMessageKey = 0;
 
-chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true }).catch((error) => console.error(error));
+// Open side panel when icon is clicked. Change in default behavior
+chrome.sidePanel
+  .setPanelBehavior({ openPanelOnActionClick: true })
+  .catch((error) => console.error(error));
 
+// Function to retrieve value from chrome.storage.local
 async function getValue(key) {
   const result = await chrome.storage.local.get(key);
   return result[key];
@@ -12,27 +17,28 @@ async function getValue(key) {
 // Initialize study materials
 getValue("studyMaterials").then((result) => {
   studyMaterials = JSON.parse(result || "[]"); // Default to empty array if no data
-  valueSize = Object.keys(studyMaterials).length;
-  console.log(studyMaterials)
+  valueSize = Object.keys(studyMaterials).length; // Define how many facts there are
+  // console.log(studyMaterials)
 });
-
 
 // Function to update study materials when changed
 async function handleStorageUpdate(changes, areaName) {
-  if (areaName === 'local' && changes.studyMaterials) {
+  if (areaName === "local" && changes.studyMaterials) {
     // Retrieve the updated value
     const updatedStudyMaterials = changes.studyMaterials.newValue;
-    console.log("new Study materials", updatedStudyMaterials)
+    console.log("new Study materials", updatedStudyMaterials);
 
-    // Parse and update your local variables if needed
+    // Parse and update global variables
     studyMaterials = JSON.parse(updatedStudyMaterials);
     valueSize = Object.keys(studyMaterials).length;
 
-    console.log("Updated Study Materials:");
-    console.log("Number of items:", valueSize);
+    // console.log("Updated Study Materials:");
+    // console.log("Number of items:", valueSize);
   }
 }
 
+// Listener for storage changes
+chrome.storage.onChanged.addListener(handleStorageUpdate);
 
 // Function to generate notification with study material
 function sendStudyNotes() {
@@ -46,11 +52,8 @@ function sendStudyNotes() {
     iconUrl: "./icons/nudge.png",
     title: "Study Nudge!",
     message: studyMaterials[nextMessageKey],
-    buttons: [
-      { title: "Got It!" },
-      { title: "Mastered!" }
-    ],
-    priority: 0
+    buttons: [{ title: "Got It!" }, { title: "Mastered!" }],
+    priority: 0,
   });
 
   // Loop through study notes
@@ -81,7 +84,3 @@ chrome.tabs.onCreated.addListener((tab) => {
   chrome.alarms.clear();
   chrome.alarms.create("studyNudge", { periodInMinutes: 0.2 });
 });
-
-
-// Listener for storage changes
-chrome.storage.onChanged.addListener(handleStorageUpdate);
