@@ -45,7 +45,7 @@ This is a Chrome extension designed to help users save, retrieve, and display st
 
 ## How It Works
 
-![sidebar image](sideBar.png) ![alt text](notification.png)
+![sidebar image](./icons/sideBar.png) ![alt text](./icons/notification.png)
 ### **Sidebar Interface**
 - A simple textarea is used to display and edit study materials.
 - Clicking the **Save** button processes the notes and stores them in Chrome's local storage.
