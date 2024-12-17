@@ -84,7 +84,7 @@ This is a Chrome extension designed to help users save, retrieve, and display st
 
 1. **Add Notes**:
    - Open the extension sidebar by clicking the icon.
-   - Enter your study notes, one per line, in the textarea.
+   - Enter your study notes, one per line, in the textarea. *Security+ Notes included for convenience*
    - Click the **Save** button to store your notes.
 
 2. **Receive Notifications**:
