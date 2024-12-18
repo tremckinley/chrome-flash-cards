@@ -141,7 +141,8 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ---
 
-## Contributions
+## Resources
 
-Contributions are welcome! Feel free to open issues or submit pull requests to enhance functionality or fix bugs.
+**Learn how to build your own Extension!**
 
+https://developer.chrome.com/docs/extensions/
